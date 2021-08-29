@@ -1,0 +1,4 @@
+/simplecrud-backend/node_modules/
+/simplecrud-frontend/node_modules/
+/simplecrud-frontend/.git/
+/simplecrud-backend/.env
