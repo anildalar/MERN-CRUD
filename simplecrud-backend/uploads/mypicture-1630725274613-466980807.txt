@@ -1,0 +1,10 @@
+oklabs.png
+
+0 Index = oklabs
+1 Index = png
+
+React (Frontend) File ->
+		Express Api -> 
+			File Save (Permantly Save on our server) 
+				-> Record MongoDB
+					--> AWS S3
