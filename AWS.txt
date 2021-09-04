@@ -1,0 +1,124 @@
+oklabs.png
+
+0 Index = oklabs
+1 Index = png
+
+React (Frontend) File ->
+		Express Api -> 
+			File Save (Permantly Save on our server) 
+				-> Record MongoDB
+					--> AWS S3
+
+
+1. Build the Express Api to Handle the File/Image;
+	1.1 CRUD API
+2. Send File/Image Frontend to Backend and save on Backend Server store the location in Mongodb.
+	2.1 CRUD
+3. Frontend -> Backend -> AWS S3 (Store) Store the image location mongodb
+
+https://console.aws.amazon.com/
+
+AWS = AMAZON WEB SERVICE
+IAM = Identification and Access Management
+S3  = SIMPLE STORAGE SERVICE
+arn = Amazon Resource Names
+EC2 = Elastic Cloud Computing
+ACL = Access Control List
+
+arn:partition:service:region:account-id:resource-id
+arn:partition:service:region:account-id:resource-type/resource-id
+arn:partition:service:region:account-id:resource-type:resource-id
+
+Access key ID     = AKIAQTV6G6EE5DWBZRXJ 
+Secret access key = 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
+
+User ARN	  = arn:aws:iam::042274844937:user/OKLABS
+		    arn:partition:service:region:account-id:resource-type/resource-id
+
+
+
+
+./uploads/oklabs.png
+
+path.join('./uploads/','oklabs.png');
+// REturn  'uploads\oklabs.png'
+
+path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');
+// Returns: '/foo/bar/baz/asdf'
+
+Types of Address
+1. Absoulute Address 
+	Always Start with a /
+2. Relative Adrees
+	Always Start with a ./
+	./ represent current directory
+
+the location of package.json file is the root of project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Now click Bucket Policy.
+Now look at the template below. You can set your bucket policy like this.Paste this template in the editor.
+
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1488494182833",
+    "Statement": [
+        {
+            "Sid": "Stmt1488493308547",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::042274844937:user/OKLABS"
+            },
+            "Action": [
+                "s3:ListBucket",
+                "s3:ListBucketVersions",
+                "s3:GetBucketLocation",
+                "s3:Get*",
+                "s3:Put*"
+            ],
+            "Resource": "arn:aws:s3:::*"
+        }
+    ]
+}
+
+CORS Policy
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "GET",
+            "HEAD",
+            "POST",
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+]

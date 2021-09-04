@@ -12,8 +12,8 @@ let deletePost = (req,res)=>{
         //console.log(path.join("./uploads/" , d.image));
         //2. Delete the file from server as well
         //console.log(d.image);
-        //fs.unlinkSync(path.join("./uploads/" , d.image)); 
-        fs.unlinkSync("\\uploads\\" +d.image); 
+        fs.unlinkSync(path.join("./uploads/" , d.image)); 
+        //fs.unlinkSync("\\uploads\\" +d.image); 
         //console.log('File deleted!');
         res.status(200).json({
             msg:"Data Deleted Successfully",
