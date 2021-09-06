@@ -6,8 +6,12 @@ oklabs.png
 React (Frontend) File ->
 		Express Api -> 
 			File Save (Permantly Save on our server) 
-				-> Record MongoDB
+				-> Record MongoDBs
 					--> AWS S3
+
+/getimage  -> root public directory
+
+getimage=public
 
 
 1. Build the Express Api to Handle the File/Image;
