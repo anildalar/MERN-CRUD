@@ -11,6 +11,7 @@ app.use(express.json());
 
 app.use('/uploads',express.static('uploads'));
 
+app.use('/getimage',express.static('public'))
 
 const multer = require('multer');
 
@@ -47,7 +48,8 @@ app.post('/profile_pic',upload.single('mypicture'),fileUpload);
 
 app.get('/getposts',getRoute);
 app.get('/getpostbyid/:postid',getPostByIdRoute);
-app.post('/addpost',addPost);
+
+app.post('/addpost',upload.single('image'),addPost);
 
 app.put('/updatepost',updatepost);
 

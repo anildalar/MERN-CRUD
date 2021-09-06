@@ -9,8 +9,7 @@ const PostModel = mongoose.model('Posts', {
         required:true
     },
     image: {
-        type:String,
-        required:true
+        type:String
     },
  });
 
