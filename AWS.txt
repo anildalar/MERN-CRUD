@@ -1,13 +1,58 @@
+How to upload file on AWS S3 using NodeJs?
+
+Files.
+	images
+	pdf
+	invoices
+	doc
+	xls
+	ppt
+	video
+	audio
+	largefile
+
+Disadvantage of storing file on our server?
+1. Application (frontend+Backend) and Storage on Same Server
+2. Week Performance
+3. Application may crash
+
+We need a dedicated service for storing large files.
+
+1. Application will run on seperate server
+2. Storage of files will be on seperate server
+3. DB i.e MongoDb is also running on Seperate Server
+
+Your Application Will be very scalable.
+
+Large Enterprise Application
+For Example
+Flipkart.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. React (Frontend) File ->
+2.		Express Api -> 
+3.			File Save (Permantly Save on our server) 
+4.				-> Record MongoDBs
+5.					--> AWS S3
+
 oklabs.png
 
 0 Index = oklabs
 1 Index = png
-
-React (Frontend) File ->
-		Express Api -> 
-			File Save (Permantly Save on our server) 
-				-> Record MongoDBs
-					--> AWS S3
 
 /getimage  -> root public directory
 
@@ -36,8 +81,7 @@ arn:partition:service:region:account-id:resource-type:resource-id
 Access key ID     = AKIAQTV6G6EE5DWBZRXJ 
 Secret access key = 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
 
-User ARN	  = arn:aws:iam::042274844937:user/OKLABS
-		    arn:partition:service:region:account-id:resource-type/resource-id
+
 
 
 
@@ -80,6 +124,9 @@ the location of package.json file is the root of project
 
 
 
+User ARN	  = arn:aws:iam::042274844937:user/OKLABS
+		    arn:partition:service:region:account-id:resource-type/resource-id
+		    arn:aws:iam::042274844937:user/OKLABS2
 
 
 
@@ -94,7 +141,7 @@ Now look at the template below. You can set your bucket policy like this.Paste t
             "Sid": "Stmt1488493308547",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::042274844937:user/OKLABS"
+                "AWS": "arn:aws:iam::042274844937:user/OKLABS2"
             },
             "Action": [
                 "s3:ListBucket",
@@ -103,11 +150,14 @@ Now look at the template below. You can set your bucket policy like this.Paste t
                 "s3:Get*",
                 "s3:Put*"
             ],
-            "Resource": "arn:aws:s3:::*"
+            "Resource": "arn:aws:s3:::oklabsamazonbucket2"
         }
     ]
 }
 
+Now you have given permission to use oklabs2 user to use okabsmazonbukcket2
+
+CORS = Cross Origin Request Sharing
 CORS Policy
 [
     {
@@ -126,3 +176,34 @@ CORS Policy
         "ExposeHeaders": []
     }
 ]
+
+
+Access key ID     = AKIAQTV6G6EE5GAYRBFL
+Secret access key = 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 
+
+
+Access Key ID:     AKIAQTV6G6EE634KMMZN
+Secret Access Key: 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
+
+Bucket = Storage Server
+
+Bucket1 = Storage Server1
+Bucket2 = Storage Server2. Location India, USA, UK, Singapore
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+amazon.in => Indian Bucket => Asia Pacific Mumbai
+
+
+https://www.npmjs.com/package/aws-sdk
+
+SDK = Software Development Kit
