@@ -78,9 +78,8 @@ arn:partition:service:region:account-id:resource-id
 arn:partition:service:region:account-id:resource-type/resource-id
 arn:partition:service:region:account-id:resource-type:resource-id
 
-Access key ID     = AKIAQTV6G6EE5DWBZRXJ 
-Secret access key = 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
-
+Access key ID     =  
+Secret access key = 
 
 
 
@@ -178,12 +177,6 @@ CORS Policy
 ]
 
 
-Access key ID     = AKIAQTV6G6EE5GAYRBFL
-Secret access key = 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 
-
-
-Access Key ID:     AKIAQTV6G6EE634KMMZN
-Secret Access Key: 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
 
 Bucket = Storage Server
 
